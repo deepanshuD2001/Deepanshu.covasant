@@ -1,12 +1,17 @@
 #input data = [1,2,3, [1,2,3,[3,4],2]]
 #output data=[1, 2, 3, 1, 2, 3, 3, 4, 2]
 
-def flattens(input):
-    temp=[]
-    temp=[*input[:3],*input[-1][:3],*input[-1][3],input[-1][-1]]
-    return temp
+def flatten(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flatten(item)) 
+        else:
+            result.append(item)
+    return result
     
-if __name__=='__main__':
-    input = [1,2,3, [1,2,3,[3,4],2]]
-    result=flattens(input)
-    print(result)
+input_list = [1, 2, 3, [1, 2, 3, [3, 4], 2]]
+flattened = flatten(input_list)
+print(flattened)
+    
+    
