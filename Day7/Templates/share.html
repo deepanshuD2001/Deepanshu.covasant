@@ -1,0 +1,18 @@
+<!DOCTYPE>
+<head>
+</head>
+<html>
+    <head>
+    <title>Daily updates</title>
+    </head>
+    <body>
+  <div class="textdata">
+{% if data %}
+<p>{{ data | safe }}</p>
+{% else %}
+<h1>no noted updated</h1>
+{% endif %}
+
+</div>
+    </body>
+    </html>
